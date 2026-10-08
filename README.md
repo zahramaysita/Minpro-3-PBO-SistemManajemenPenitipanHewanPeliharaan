@@ -248,7 +248,12 @@ Pada bab ini akan dijelaskan penerapan konsep Object Oriented Programming (OOP) 
 
 Encapsulation atau enkapsulasi merupakan konsep OOP yang digunakan untuk membungkus dan melindungi data agar tidak dapat diakses atau diubah secara langsung dari luar class. Tujuan utama dari encapsulation adalah mencegah data diubah sembarangan sehingga nilai yang tersimpan tetap valid dan lebih terkontrol. pada program Sistem Penitipan Hewan, encapsulation diterapkan dengan menggunakan access modifier private pada atribut class serta method getter dan setter untuk mengakses maupun mengubah data. Dengan cara ini, data tidak dapat diakses secara langsung dari luar class, melainkan harus melalui method yang telah disediakan.
 
-<img width="531" height="482" alt="image" src="https://github.com/user-attachments/assets/d2a47634-0e90-43b6-bd4c-3347a08fb789" />
+<img width="295" height="61" alt="image" src="https://github.com/user-attachments/assets/be2d4634-e2e8-4316-9fd2-2df1ff6640c2" />
+
+
+<img width="472" height="341" alt="image" src="https://github.com/user-attachments/assets/0a7d2856-8648-426f-b1dd-6b633070d158" />
+
+
 
 Gambar di atas menunjukkan penerapan encapsulation pada class Hewan. Penerapan ini dapat dilihat dari penggunaan access modifier private pada atribut idHewan dan namaHewan. Dengan menggunakan private, atribut tersebut tidak dapat diakses secara langsung dari luar class. Untuk mengambil dan mengubah nilai atribut, digunakan method getter dan setter yang telah disediakan. Penerapan encapsulation ini bertujuan untuk melindungi data agar tidak diakses atau diubah secara sembarangan dari luar class.
 
@@ -258,41 +263,99 @@ Inheritance atau pewarisan merupakan konsep OOP yang memungkinkan suatu class me
 
 Pada program Sistem Penitipan Hewan, inheritance diterapkan pada class Kucing, Anjing, Kelinci, dan Hamster yang mewarisi class Hewan sebagai superclass. Dengan pewarisan tersebut, setiap subclass dapat menggunakan atribut dan method yang sudah dimiliki oleh class Hewan tanpa perlu menuliskannya kembali.
 
+class anjing
+
 <img width="405" height="52" alt="image" src="https://github.com/user-attachments/assets/9b07b5fd-d703-46e8-a32c-aab63643caee" />
+
+class hamster
 
 <img width="382" height="45" alt="image" src="https://github.com/user-attachments/assets/e64ce2a0-a131-4e9e-839a-5844498067a3" />
 
+class kelinci
+
 <img width="376" height="37" alt="image" src="https://github.com/user-attachments/assets/14540c4f-2450-43e5-a6f7-4b691a157b5a" />
+
+class kucing
 
 <img width="371" height="47" alt="image" src="https://github.com/user-attachments/assets/44704e5a-e404-45a5-8df3-fe9e57514c4f" />
 
-## 3.3 Polymorphism (Method Overriding) Nilai Tambah
+## 3.3 Polymorphism 
 
-Polymorphism merupakan konsep OOP yang memungkinkan method dengan nama yang sama memiliki perilaku yang berbeda pada class yang berbeda. Pada program ini, polymorphism diterapkan menggunakan method overriding, yaitu subclass membuat kembali method yang sudah ada pada superclass sesuai dengan kebutuhannya.
+### Method Overriding
 
-Polymorphism diterapkan pada method tampilkanHewan(). Pada saat data hewan ditampilkan, program memanggil method getInfo() melalui objek h yang bertipe Hewan. Karena method getInfo() telah di-override pada class Kucing, Anjing, Kelinci, dan Hamster, maka output yang ditampilkan akan menyesuaikan dengan jenis hewan yang diproses. Dengan demikian, satu method yang sama dapat menghasilkan output yang berbeda sesuai dengan objek yang digunakan.
 
-<img width="665" height="287" alt="image" src="https://github.com/user-attachments/assets/aaa5f3e2-71d5-420c-8c9d-dee9935fed87" />
+Polymorphism merupakan konsep OOP yang memungkinkan method dengan nama yang sama memiliki perilaku atau fungsi yang berbeda. Pada program ini, polymorphism diterapkan menggunakan method overriding dan method overloading.
+
+
+Method overriding diterapkan pada method getInfo() yang terdapat pada class Hewan. Method tersebut kemudian di-override pada class Kucing, Anjing, Kelinci, dan Hamster. Pada saat data hewan ditampilkan, program memanggil method getInfo() melalui objek h yang bertipe Hewan. Karena method getInfo() telah di-override pada masing-masing subclass, maka output yang ditampilkan akan menyesuaikan dengan jenis hewan yang diproses.
 
 
 Letak overriding: class Kucing, Anjing, Kelinci, dan Hamster
 
+class kucing
+
 <img width="505" height="145" alt="image" src="https://github.com/user-attachments/assets/2ffad36e-4752-4864-8893-84db2eb8d898" />
 
 
+class anjing 
 
 <img width="431" height="92" alt="image" src="https://github.com/user-attachments/assets/933e5761-b3d9-4db3-8143-fc51937c767c" />
 
 
+class kelinci 
 
 <img width="440" height="86" alt="image" src="https://github.com/user-attachments/assets/ed3bd48a-35f2-421f-bf47-c1b712065212" />
 
 
+class hamster
 
 <img width="432" height="82" alt="image" src="https://github.com/user-attachments/assets/400bcb66-31bc-4a4d-8d09-a3417c24bee0" />
-
 
 
 Pada gambar di bawah, method getInfo() berhasil dijalankan pada menu Tampilkan Data Hewan. Hal ini dapat dilihat dari output yang ditampilkan, di mana setiap jenis hewan menghasilkan informasi yang berbeda meskipun menggunakan method yang sama. Sebagai contoh, data kucing menampilkan informasi "Kucing - Milo", sedangkan data anjing menampilkan informasi "Anjing - Bruno". Dengan demikian, penerapan polymorphism melalui method overriding pada program ini telah berhasil dilakukan.
 
 <img width="282" height="622" alt="image" src="https://github.com/user-attachments/assets/62a18ef8-9f9f-48f8-8d5d-f43575c4b691" />
+
+
+### Method Overloading 
+
+Method overloading diterapkan pada method infoPenitipan() di class Hewan. Terdapat dua method dengan nama yang sama, yaitu infoPenitipan() dan infoPenitipan(int lamaHari), tetapi memiliki parameter yang berbeda. Method infoPenitipan() digunakan untuk menampilkan nama hewan, sedangkan infoPenitipan(int lamaHari) digunakan untuk menampilkan lama penitipan hewan.
+
+<img width="702" height="212" alt="image" src="https://github.com/user-attachments/assets/7759f0c8-d6a1-46ba-b820-7d0613d106a5" />
+
+
+Jadi, pada program Sistem Penitipan Hewan ini polymorphism diterapkan dalam bentuk **overriding dan overloading**. Overriding digunakan pada method getInfo() yang dibuat berbeda pada setiap jenis hewan, seperti Kucing, Anjing, Kelinci, dan Hamster. Sedangkan overloading diterapkan pada method infoPenitipan() yang dibuat dalam dua bentuk dengan parameter yang berbeda. Dengan penerapan tersebut, program dapat menggunakan method yang sama untuk menghasilkan fungsi atau informasi yang sesuai dengan kebutuhan.
+
+
+## 3.4  Abstraction
+
+Abstraction diterapkan pada class Hewan dengan menggunakan abstract class dan abstract method. Class Hewan dibuat sebagai abstract class karena menjadi dasar untuk class Kucing, Anjing, Kelinci, dan Hamster. Selain itu, terdapat method getInfo() yang dibuat sebagai abstract method sehingga setiap class turunan harus membuat isi method tersebut sesuai dengan jenis hewannya.
+
+### Absrtact class
+
+Abstract class diterapkan pada class Hewan dengan menambahkan keyword abstract. Class Hewan digunakan sebagai class dasar yang akan diwarisi oleh class Kucing, Anjing, Kelinci, dan Hamster. Karena dibuat sebagai abstract class, class Hewan tidak digunakan untuk membuat objek secara langsung, tetapi menjadi dasar bagi class-class turunannya.
+
+
+<img width="525" height="47" alt="image" src="https://github.com/user-attachments/assets/0bef39ba-c09b-47d3-b74d-28e3ea1c5b9a" />
+
+
+### Abstract method
+
+Abstract method diterapkan pada method getInfo() di class Hewan. Method ini dibuat tanpa isi atau implementasi karena isi dari getInfo() akan ditentukan oleh masing-masing class turunan. Class Kucing, Anjing, Kelinci, dan Hamster kemudian membuat kembali method getInfo() sesuai dengan informasi dari jenis hewan masing-masing.
+
+
+<img width="397" height="51" alt="image" src="https://github.com/user-attachments/assets/0b56bd09-71f0-4a96-91ac-d861dee758c1" />
+
+
+## 3.5 Interface (Nilai Tambah)
+
+
+Nilai tambah yang diterapkan pada program ini adalah penggunaan interface InfoHewan. Interface tersebut digunakan untuk mendefinisikan method getInfo() yang nantinya digunakan pada class Hewan. Penerapannya dapat dilihat pada interface InfoHewan yang berada di package interfaces serta pada class Hewan yang menggunakan implements InfoHewan. Dengan adanya interface, struktur program menjadi lebih teratur dan mudah untuk dikembangkan.
+
+
+<img width="302" height="127" alt="image" src="https://github.com/user-attachments/assets/26ea028b-c873-4aac-8e12-a094bbac1ca5" />
+
+
+<img width="517" height="132" alt="image" src="https://github.com/user-attachments/assets/dd4a1979-99f2-4bfd-a7bc-1b725cf4eac3" />
+
+
